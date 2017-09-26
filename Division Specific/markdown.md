@@ -1,2 +1,2 @@
-# Competitive Programming
-Compilation of competitive programming materials from high school. 
+# Division Specific Topics and Problems
+Divions are Bronze, Silver, Gold, and Platinum. 
