@@ -8,6 +8,8 @@ using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
 typedef pair<int, int> pii;
+typedef vector<pii> vii;
+
 
 #define FOR(i, a, b) for (int i=a; i<b; i++)
 #define F0R(i, a) for (int i=0; i<a; i++)
@@ -24,11 +26,11 @@ typedef pair<int, int> pii;
 const int MOD = 1000000007;
 double PI = 4*atan(1);
 
-int N, arr[100100], o[100100], tmin;
+int N, pre[100100];
+double mvals[100100];
+vi scores;
 
-multiset<pair<double, int> > m;
 
-double e = 1e-50;
 
 int main(){
 //    ifstream fin("/Users/konwoo/input.txt");
@@ -37,32 +39,34 @@ int main(){
     ofstream fout("homework.out");
 
     fin >> N;
-
-    arr[0] = 0, o[0] = 0;
+    int temp = 0;
+    double maxval = -1.0;
+    scores.resize(N);
     F0R(i, N){
-        fin >> arr[i+1];
-        o[i+1] = o[i];
-        o[i+1] += arr[i+1];
+        fin >> scores[i];
+        temp += scores[i];
+        pre[i] = temp;
     }
+    int minim = min(scores[N-2], scores[N-1]);
 
-    tmin = min(arr[N-1], arr[N]);
     FORd(k, 1, N-1){
-        double sum = o[N] - o[k] - tmin;
-        double denom = N-k-1;
-        m.insert(mp(sum/(denom), k));
-        tmin = min(tmin, arr[k]);
+        double ans = (pre[N-1] - pre[k-1] - minim)/(N - k - 1.0);
+        mvals[k-1] = ans;
+        minim = min(minim, scores[k-1]);
+        maxval = max(maxval, ans);
     }
-    
-    multiset< pair<double, int> > ::iterator it = m.begin();
-    multiset< pair<double, int> > ::reverse_iterator it2 = m.rbegin();
 
-    double ans = ( *it2 ).f;
-    while (it != m.end()){
-        if (fabs((*it).f -ans) < e){
-            fout << (*it).s << endl;
+    FOR(i, 1, N-1){
+        if (mvals[i-1] == maxval){
+            fout << i << "\n";
         }
-        it++;
     }
+
 
     return 0;
 }
+
+
+
+
+
