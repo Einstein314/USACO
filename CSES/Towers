@@ -85,7 +85,12 @@ int main(){
 
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-##**(better version)**
+
+
+BETTER VERSION 
+
+
+
 //#include "/Users/konwoo/stdc++.h"
 #include "bits/stdc++.h"
 
