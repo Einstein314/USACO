@@ -30,7 +30,7 @@
 | 2016 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=669) | moocast | Binary Search |  |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=670) | checklist | DP |  |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=671) | lasers | Graphs |  |
-| 2017 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=693) | bphoto | Range Queries |  |
+| 2017 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=693) | bphoto | Range Queries | Done  |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=694) | hps | DP |  |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=695) | cownav | Graphs |  |
 | 2017 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=717) | visitfj | Graphs ||
