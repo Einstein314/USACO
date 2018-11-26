@@ -17,8 +17,8 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=575) | dream | Graphs |  |
 | 2016 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=597) | angry | Binary Search |  |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=598) | radio | DP |  |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=599) | lightsout | |  |
-| 2016 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=621) | cbarn | |  |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=599) | lightsout | Data structures |  |
+| 2016 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=621) | cbarn | Implementation|  |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=622) | cbarn2 | DP |  |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=623) | fencedin | Trees |  |
 | 2016 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=645) | split | Two Pointers | |
