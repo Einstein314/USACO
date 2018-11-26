@@ -22,7 +22,7 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=622) | cbarn2 | DP |  |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=623) | fencedin | Trees |  |
 | 2016 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=645) | split | Two Pointers | |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=646) | closing | Trees |  |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=646) | closing | Trees | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=647) | 248 | DP |  |
 
 | Contest         | # | Name      | Topic            | Result                 |
@@ -31,7 +31,7 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=670) | checklist | DP |  |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=671) | lasers | Graphs |  |
 | 2017 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=693) | bphoto | Range Queries | Done  |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=694) | hps | DP |  |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=694) | hps | DP | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=695) | cownav | Graphs |  |
 | 2017 Feb | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=717) | visitfj | Graphs ||
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=718) | nocross | DP |  |
