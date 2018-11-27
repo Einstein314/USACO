@@ -46,7 +46,7 @@
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=767) | hayfeast | Data Structures |  |
 | 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=789) | mootube | DSU | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=790) | atlarge | DFS |  |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=791) | spainting | DP |  |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=791) | spainting | DP | Done  |
 | 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem&cpid=801) | snowboots | Set ||
 | | [2](http://www.usaco.org/index.php?page=viewproblem&cpid=802) | dirtraverse | DFS |  |
 | | [3](http://www.usaco.org/index.php?page=viewproblem&cpid=803) | taming | DP | |
