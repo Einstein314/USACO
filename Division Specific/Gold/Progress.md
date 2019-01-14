@@ -59,12 +59,4 @@
 | 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=861) | dining | Shortest Path | |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=862) | cowpatibility | Hashing | |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=863) | teamwork | DP |  |
-| 2019 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=789) | mootube | DSU | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=790) | atlarge | DFS |  |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=791) | spainting | DP | Done  |
-| 2019 Feb | [1](http://www.usaco.org/index.php?page=viewproblem&cpid=801) | snowboots | Set ||
-| | [2](http://www.usaco.org/index.php?page=viewproblem&cpid=802) | dirtraverse | DFS |  |
-| | [3](http://www.usaco.org/index.php?page=viewproblem&cpid=803) | taming | DP | Done |
-| 2019 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=837) | sort | Range Queries, Binary Search |  |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=838) | milkorder | Graphs, Binary Search |  |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=839) | talent | DP | |
+
