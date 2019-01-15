@@ -45,7 +45,7 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=766) | barnpainting | Trees, DP | |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=767) | hayfeast | Data Structures |  |
 | 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=789) | mootube | DSU | Done |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=790) | atlarge | DFS |  |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=790) | atlarge | DFS | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=791) | spainting | DP | Done  |
 | 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem&cpid=801) | snowboots | Set ||
 | | [2](http://www.usaco.org/index.php?page=viewproblem&cpid=802) | dirtraverse | DFS |  |
@@ -56,7 +56,7 @@
 
 | Contest         | # | Name      | Topic            | Result                 |
 | --------------- | - | --------- | ---------------- | ---------------------- |
-| 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=861) | dining | Shortest Path | |
+| 2018 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=861) | dining | Shortest Path | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=862) | cowpatibility | Hashing | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=863) | teamwork | DP | Done |
 
