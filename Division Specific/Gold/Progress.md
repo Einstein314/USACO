@@ -42,7 +42,7 @@
 | Contest         | # | Name      | Topic            | Result                 |
 | --------------- | - | --------- | ---------------- | ---------------------- |
 | 2017 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=765) | piepie | BFS | |
-| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=766) | barnpainting | Trees, DP | |
+| | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=766) | barnpainting | Trees, DP | Done|
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=767) | hayfeast | Data Structures |  |
 | 2018 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=789) | mootube | DSU | Done |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=790) | atlarge | DFS | Done |
