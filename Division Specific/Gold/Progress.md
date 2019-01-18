@@ -48,7 +48,7 @@
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=790) | atlarge | DFS | Done |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=791) | spainting | DP | Done  |
 | 2018 Feb | [1](http://www.usaco.org/index.php?page=viewproblem&cpid=801) | snowboots | Set ||
-| | [2](http://www.usaco.org/index.php?page=viewproblem&cpid=802) | dirtraverse | DFS |  |
+| | [2](http://www.usaco.org/index.php?page=viewproblem&cpid=802) | dirtraverse | DFS | Done  |
 | | [3](http://www.usaco.org/index.php?page=viewproblem&cpid=803) | taming | DP | Done |
 | 2018 Open | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=837) | sort | Range Queries, Binary Search |  |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=838) | milkorder | Graphs, Binary Search |  |
