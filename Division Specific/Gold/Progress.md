@@ -14,7 +14,7 @@
 | --------------- | - | --------- | ---------------- | ---------------------- |
 | 2015 Dec | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=573) | cardgame | Binary Search |  |       
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=574) | feast | DP | Done |
-| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=575) | dream | Graphs |  |
+| | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=575) | dream | Graphs | Done |
 | 2016 Jan | [1](http://www.usaco.org/index.php?page=viewproblem2&cpid=597) | angry | Binary Search |  |
 | | [2](http://www.usaco.org/index.php?page=viewproblem2&cpid=598) | radio | DP |  |
 | | [3](http://www.usaco.org/index.php?page=viewproblem2&cpid=599) | lightsout | Data structures |  |
