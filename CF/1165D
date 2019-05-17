@@ -1,0 +1,92 @@
+#pragma GCC optimize ("O3")
+#pragma GCC target ("sse4")
+
+#include <bits/stdc++.h>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+
+using namespace std;
+using namespace __gnu_pbds;
+
+typedef long long ll;
+typedef long double ld;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+typedef vector<pii> vii;
+
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
+
+#define FOR(i,a,b) for (int i = a; i < b; i++)
+#define F0R(i,a) for (int i = 0; i < a; i++)
+#define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
+#define F0Rd(i,a) for (int i = (a)-1; i>=0; i--)
+#define pb push_back
+#define all(x) x.begin(), x.end()
+
+int t, n, sieve[1000500];
+ll ans, arr[305];
+
+void solve(){
+    cin >> n;
+    F0R(j,n) cin >> arr[j];
+    sort(arr, arr+n);
+    
+    bool contra = 0;
+    ans = arr[0] * arr[n-1];
+    ll temp = ans;
+    int fin = 1;
+    for (ll x = 2; x*x <= temp; x++){
+        int cnt = 0;
+        while (temp % x == 0){
+            cnt++;
+            temp /= x;
+        }
+        fin *= (cnt + 1);
+    }
+    if (temp > 1) fin *= 2;
+    if (n != fin - 2){
+        cout << -1 << "\n";
+        return;
+    }
+    
+    if (n % 2 == 0){
+        F0R(j, n/2+1){
+            if (ans != arr[j] * arr[n-1-j]) contra = 1;
+        }
+        if (contra) cout << -1 << "\n";
+        else cout << ans << "\n";
+    }
+    else{
+        if (n == 1){
+            if (!sieve[arr[0]]) cout << ans << "\n";
+            else cout << -1 << "\n";
+        }
+        else{
+            F0R(j, n/2){
+                if (ans != arr[j] * arr[n-1-j]) contra = 1;
+            }
+            if (ans / arr[n/2] != arr[n/2]) contra = 1;
+            if (contra) cout << -1 << "\n";
+            else cout << ans << "\n";
+        }
+        
+    }
+}
+
+int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    
+    FOR(x, 2, 1000500){
+        if (sieve[x]) continue;
+        for (int u = 2*x; u <= 1000500; u += x) sieve[u] = 1;
+    }
+    
+    cin >> t;
+    F0R(i,t){
+        solve();
+    }
+    
+   
+    return 0;
+}
