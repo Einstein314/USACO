@@ -29,17 +29,6 @@ bool visited[mx];
 vi adj[mx];
 
 
-void dfs(int e){
-    visited[e] = 1;
-	col[e] = 0;
-    for (auto f : adj[e]){
-        if (!visited[f]){
-            dfs(f);
-			if (col[f] % 2 == 0) col[e] = 1;
-        }
-    }
-}
-
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
@@ -49,18 +38,39 @@ int main(){
 		cin >> n >> m;
         FOR(j, 1, n+1) visited[j] = 0;
         FOR(j, 1, n+1) adj[j].clear();
-		FOR(j, 1, n+1) col[j] = -1;
+		FOR(j, 1, n+1) col[j] = 0;
 		F0R(j, m){
 			cin >> v >> u;
 			adj[v].pb(u);
 			adj[u].pb(v);
 		}
-        dfs(1);
+		queue<int> q;
+		q.push(1);
+		while (!q.empty()){
+			int v = q.front(); q.pop();
+			visited[v] = 1;
+			for (auto a : adj[v]){
+				if (!visited[a]){
+					q.push(a);
+					col[a] = col[v] + 1;
+				}
+			}
+		}
 		int ans = 0;
 		FOR(j,1,n+1) if (col[j] % 2 == 1) ans++;
-		cout << ans << "\n";
-		FOR(j,1,n+1) if (col[j] % 2 == 1) cout << j << " ";
-		cout << "\n";
+		if (ans > n/2){
+			cout << n - ans << "\n";
+			FOR(j,1,n+1) if (col[j] % 2 == 0) cout << j << " ";
+			cout << "\n";
+
+		}
+		else{
+			cout << ans << "\n";
+			FOR(j,1,n+1) if (col[j] % 2 == 1) cout << j <<" ";
+			cout << "\n";
+			
+
+		}
 
 	}
 
