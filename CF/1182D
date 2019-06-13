@@ -1,0 +1,146 @@
+#pragma GCC optimize ("O3")
+#pragma GCC target ("sse4")
+
+#include <bits/stdc++.h>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+
+using namespace std;
+using namespace __gnu_pbds;
+
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+typedef vector<pii> vii;
+
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_set;
+
+#define FOR(i,a,b) for (int i = a; i < b; i++)
+#define F0R(i,a) for (int i = 0; i < a; i++)
+#define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
+#define F0Rd(i,a) for (int i = (a)-1; i>=0; i--)
+#define pb push_back
+#define all(x) x.begin(), x.end()
+#define sz(x) int((x).size())
+#define f first
+#define s second 
+#define newl '\n'
+#define mp make_pair
+#define trav(a,b) for(auto a : b)
+
+template<int SZ> struct TreeDiameter {
+    int n;
+    vi adj[SZ];
+    void addEdge(int a, int b) { adj[a].pb(b), adj[b].pb(a); }
+
+    int par[SZ], dist[SZ];
+	vector< set<int> > se;
+    void dfs(int x) {
+		se[dist[x]].insert(sz(adj[x]));
+        trav(y,adj[x]) if (y != par[x]) {
+            par[y] = x; dist[y] = dist[x]+1;
+            dfs(y);
+        }
+    }
+    void genDist(int x) { par[x] = -1; dist[x] = 0; se.assign(n, set<int>()); dfs(x); }
+    
+	bool check(int x){
+		if (x == -1) return false;
+		genDist(x);
+		F0R(i,n+1){
+			if (sz(se[i]) > 1) return false;
+		}		
+		return true;
+	}
+
+    int diaLength;
+    vi center, dia = {1,1};
+    void init(int _n) {
+        n = _n;
+        genDist(1); FOR(i,1,n+1) if (dist[i] > dist[dia[0]]) dia[0] = i; // find one endpoint of a diameter
+        genDist(dia[0]); FOR(i,1,n+1) if (dist[i] > dist[dia[1]]) dia[1] = i;
+        diaLength = dist[dia[1]];
+        int cen = dia[1]; F0R(i,diaLength/2) cen = par[cen];
+        if (diaLength&1) center = {cen,par[cen]};
+        else center = {cen};
+    }
+};
+
+int N, v, u, dist1[100500], dist2[100500];
+TreeDiameter<100500> tx;
+
+int main(){
+   // ios::sync_with_stdio(0);
+   // cin.tie(0);
+
+	cin >> N;
+	if (N == 1 || N == 2){
+		cout << 1 << newl;
+		return 0;
+	}
+	F0R(i,N-1){
+		cin >> u >> v;
+		tx.addEdge(u,v);
+	}
+	tx.init(N);
+
+    int numl = 0;
+    F0R(i,N){
+        if (sz(tx.adj[i+1]) == 1) numl++;
+    }
+    if (sz(tx.center) > 1){
+        if (tx.check(tx.dia[0])) cout << tx.dia[0] << newl;
+        else if (tx.check(tx.dia[1])) cout << tx.dia[1] << newl;
+        else cout << -1 << newl;
+    }
+    else if (numl == 2){
+        cout << tx.center[0] << newl;
+    }
+    else if (numl >= 3){
+        tx.genDist(tx.dia[0]);
+        F0R(i,N+1) dist1[i] = tx.dist[i];
+        tx.genDist(tx.dia[1]);
+
+		int cent = tx.center[0];
+		queue<int> q;
+		bool visited[100500];
+		FOR(i,1,N+1) visited[i] = 0;
+		q.push(cent);
+		visited[cent] = 1;	
+
+		vi verts;
+		while (!q.empty()){
+			int v = q.front(); q.pop();
+			for (auto a : tx.adj[v]){
+				if (visited[a]) continue;
+				visited[a] = 1;
+				if (sz(tx.adj[a]) == 2) q.push(a);
+				if (sz(tx.adj[a]) == 1){
+					q.push(a);
+					if (dist1[a] == tx.dist[a]){
+						verts.pb(a);
+					}
+				}
+			}
+		}
+
+/*
+        vii d1;
+        F0R(i,N){
+            if (dist1[i+1] == tx.dist[i+1] && sz(tx.adj[i+1]) == 1){
+                d1.pb(mp(dist1[i+1],i+1));
+				break;
+            }
+        }
+        sort(all(d1));
+		*/
+        if (tx.check(tx.dia[0])) cout << tx.dia[0] << newl;
+        else if (sz(verts) > 0 && tx.check(verts[0])) cout << verts[0] << newl;
+        else if (tx.check(tx.dia[1])) cout << tx.dia[1] << newl;
+        else if (tx.check(tx.center[0])) cout << tx.center[0] << newl;
+        else cout << -1 << newl;
+    }
+
+
+    return 0;
+}
