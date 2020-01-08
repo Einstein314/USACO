@@ -1,0 +1,110 @@
+#pragma GCC optimize ("O3")
+#pragma GCC target ("sse4")
+#include <bits/stdc++.h>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+
+using namespace std;
+using namespace __gnu_pbds;
+
+typedef long long ll;
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+
+template <class T> using ordered_set = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+typedef tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update> ordered_mset;
+
+#define FOR(i,a,b) for(int i = a; i < b; i++)
+#define F0R(i,a) for(int i = 0; i < a; i++)
+#define pb push_back
+#define all(x) x.begin(), x.end()
+#define sz(x) int((x).size())
+#define newl '\n'
+
+const int MXN = 5005;
+const ll MOD = 998244353;
+const ll INF = 1000000007;
+
+
+ll madd(ll a, ll b){
+	return (a + b) % MOD;
+}
+
+ll mmul(ll a, ll b){
+	return (a * b) % MOD;
+}
+
+ll msub(ll a, ll b){
+	return (a - b + MOD) % MOD;
+}
+
+int n, a[5005], cnt[5005];
+ll dp2[5005][5005], dp[5005], pref[5005][5005], inv[5005];
+
+int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	//ifstream cin("/Users/konwoo/input.txt");
+	//ofstream cout("/Users/konwoo/output.txt");
+
+	cin >> n;
+	F0R(i,n){
+		cin >> a[i];
+		cnt[a[i]]++;
+	}
+	inv[1] = 1;
+	for (ll i = 2; i <= 1LL*n; i++){
+		inv[(int)i] = (MOD - (MOD/i) * inv[(int)(MOD % i)] % MOD) % MOD;
+	}
+	FOR(len, 1, n+1){
+		FOR(y, len, n+1){
+			if (len == 1){
+				dp2[len][y] = mmul(1LL*cnt[y], inv[n]);
+				pref[len][y] = madd(pref[len][y-1], dp2[len][y]);
+			}
+			else{
+				dp2[len][y] = mmul(cnt[y], inv[n - len + 1]);
+				dp2[len][y] = mmul(dp2[len][y], msub(pref[len-1][y-1], pref[len-1][len-2]));
+				pref[len][y] = madd(dp2[len][y], pref[len][y-1]);
+			}
+		}
+	}
+	/*
+	FOR(len, 1, n+1){
+		FOR(y, len, n+1){
+			cout << dp2[len][y] << " ";
+		}
+		cout << newl;
+	}
+	*/
+	dp[1] = 0;
+	ll ans = 0;
+	FOR(turn, 2, n+1){
+		FOR(i, 1, n+1){
+			dp[turn] = madd(dp[turn], mmul(dp2[turn-1][i], mmul(1LL*(cnt[i] - 1), inv[n-turn+1])));
+		}
+	//	cout << dp[turn] << newl;
+		ans = madd(ans, dp[turn]);
+	}
+	cout << ans << newl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	return 0;
+}
+
