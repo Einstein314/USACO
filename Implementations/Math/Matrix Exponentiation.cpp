@@ -1,4 +1,5 @@
 //From Chillee, Check: CF 1182E 
+const ll mod1 = 1e9 + 7;
 
 struct matrix {
     vector<vector<ll>> cells;
@@ -22,9 +23,10 @@ struct matrix {
         matrix result(n, m, 0);
         for (ll i = 0; i < n; i++) {
             for (ll j = 0; j < m; j++) {
-                for (ll k = 0; k < (ll) b.cells.size(); k++)
+                for (ll k = 0; k < (ll) b.cells.size(); k++){
                     result.cells[i][j] += ((cells[i][k] * b.cells[k][j] + mod1) % mod1 + mod1);
                     result.cells[i][j] %= mod1;
+                }
             }
         }
         return result;
