@@ -1,4 +1,5 @@
 //1-indexed
+//Check: https://codeforces.com/contest/1354/problem/D
 int BIT[MX];
 
 //sum[1,k]
