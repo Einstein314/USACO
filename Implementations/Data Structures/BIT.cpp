@@ -16,7 +16,7 @@ void update(int k, int x){
 
 //sum[l,r]
 int rquery(int l, int r){
-    return BIT[r] - BIT[l-1];
+    return query(r) - query(l-1);
 }
 
 
