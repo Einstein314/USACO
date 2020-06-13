@@ -5,6 +5,8 @@ const int MX = 1e5 + 5;
 int lvl[MX], dp[MX], bridges;
 vi adj[MX];
 
+lvl[1] = 1;
+
 void dfs(int u, int p){
     dp[u] = 0;
     for (int v : adj[u]){
