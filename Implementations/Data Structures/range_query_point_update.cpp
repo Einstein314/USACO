@@ -3,7 +3,7 @@ class ELE{
         int ex1, ex2;
     ELE(int _ex1, int _ex2) : ex1(_ex1), ex2(_ex2) {}
     ELE() : ex1(0), ex2(0) {}
-}
+};
 
 ELE operator+(const ELE L, const ELE R){
     //make sure ID is identity
