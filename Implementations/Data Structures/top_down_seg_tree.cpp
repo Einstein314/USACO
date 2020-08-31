@@ -1,6 +1,5 @@
 // cp-algo and cs handbook and benq
 // tested on CSES 
-
 const int MX = 2e5 + 5;
 int n, a[MX], t[4 * MX];
 
@@ -26,17 +25,14 @@ void build(int p = 1, int l = 0, int r = n-1) {
 
 // update t[i] = v
 void update(int i, int v, int p = 1, int l = 0, int r = n-1) {
+    if (i > r || i < l) return;
     if (l == r) {
         t[p] = v;
     }
     else {
         int m = l + (r - l) / 2;
-        if (l <= i && i <= m) {
-            update(i,v,2*p,l,m);
-        }
-        else{
-            update(i,v,2*p+1,m+1,r);
-        }
+        update(i,v,2*p,l,m);
+        update(i,v,2*p+1,m+1,r);
         pull(p);
     }
 }
